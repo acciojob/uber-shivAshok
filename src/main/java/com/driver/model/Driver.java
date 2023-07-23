@@ -8,8 +8,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @FieldDefaults(level= AccessLevel.PRIVATE)
 @Entity
 //@Table(name="driverstable")
@@ -20,6 +19,17 @@ public class Driver {
 
     String mobile;
     String password;
+
+    public Driver() {
+    }
+
+    public Driver(int id, String mobile, String password, List<TripBooking> tripList, Cab cab) {
+        this.id = id;
+        this.mobile = mobile;
+        this.password = password;
+        this.tripList = tripList;
+        this.cab = cab;
+    }
 
     public int getId() {
         return id;

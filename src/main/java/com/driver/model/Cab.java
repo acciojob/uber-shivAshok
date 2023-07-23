@@ -7,8 +7,7 @@ import lombok.experimental.FieldDefaults;
 import javax.persistence.*;
 
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @FieldDefaults(level= AccessLevel.PRIVATE)
 @Entity
 //@Table(name="cabs_table")
@@ -18,6 +17,16 @@ public class Cab {
     int Id;
     int perKmRate;
     boolean available;
+
+    public Cab(int id, int perKmRate, boolean available, Driver driver) {
+        Id = id;
+        this.perKmRate = perKmRate;
+        this.available = available;
+        this.driver = driver;
+    }
+
+    public Cab() {
+    }
 
     public int getId() {
         return Id;

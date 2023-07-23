@@ -8,8 +8,7 @@ import javax.persistence.*;
 
 
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @FieldDefaults(level= AccessLevel.PRIVATE)
 @Entity
 
@@ -23,6 +22,15 @@ public class Admin {
 
     public String getUserName() {
         return userName;
+    }
+
+    public Admin() {
+    }
+
+    public Admin(int adminId, String userName, String password) {
+        this.adminId = adminId;
+        this.userName = userName;
+        this.password = password;
     }
 
     public void setUserName(String userName) {

@@ -8,8 +8,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @FieldDefaults(level= AccessLevel.PRIVATE)
 @Entity
 //@Table(name="custumer_table")
@@ -20,6 +19,16 @@ public class Customer {
 
     String mobileno;
     String password;
+
+    public Customer() {
+    }
+
+    public Customer(int id, String mobileno, String password, List<TripBooking> customerTrips) {
+        this.id = id;
+        this.mobileno = mobileno;
+        this.password = password;
+        this.customerTrips = customerTrips;
+    }
 
     public int getId() {
         return id;

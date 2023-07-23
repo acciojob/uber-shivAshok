@@ -7,8 +7,7 @@ import net.minidev.json.annotate.JsonIgnore;
 import javax.persistence.*;
 
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @FieldDefaults(level= AccessLevel.PRIVATE)
 @Entity
 //@Table(name="tripstable")
@@ -21,6 +20,20 @@ public class TripBooking {
     String toLocation;
 
     int distanceInkm;
+
+    public TripBooking() {
+    }
+
+    public TripBooking( String fromLocation, String toLocation, int distanceInkm, TripStatus status, int bill, Driver driver, Customer customer) {
+       // this.id = id;
+        this.fromLocation = fromLocation;
+        this.toLocation = toLocation;
+        this.distanceInkm = distanceInkm;
+        this.status = status;
+        this.bill = bill;
+        this.driver = driver;
+        this.customer = customer;
+    }
 
     public int getId() {
         return id;
