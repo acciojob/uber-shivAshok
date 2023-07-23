@@ -63,5 +63,6 @@ public class DriverServiceImpl implements DriverService {
 		Driver dv=driver.get();
 		dv.getCab().setAvailable(false);
 		driverRepository3.save(dv);
+		System.out.println("lub");
 	}
 }
