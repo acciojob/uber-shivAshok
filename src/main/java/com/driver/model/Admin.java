@@ -6,8 +6,8 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level= AccessLevel.PRIVATE)
@@ -21,4 +21,27 @@ public class Admin {
     String userName;
     String password;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

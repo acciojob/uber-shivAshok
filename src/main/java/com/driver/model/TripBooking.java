@@ -6,8 +6,7 @@ import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level= AccessLevel.PRIVATE)
@@ -22,6 +21,70 @@ public class TripBooking {
     String toLocation;
 
     int distanceInkm;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFromLocation() {
+        return fromLocation;
+    }
+
+    public void setFromLocation(String fromLocation) {
+        this.fromLocation = fromLocation;
+    }
+
+    public String getToLocation() {
+        return toLocation;
+    }
+
+    public void setToLocation(String toLocation) {
+        this.toLocation = toLocation;
+    }
+
+    public int getDistanceInkm() {
+        return distanceInkm;
+    }
+
+    public void setDistanceInkm(int distanceInkm) {
+        this.distanceInkm = distanceInkm;
+    }
+
+    public TripStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TripStatus status) {
+        this.status = status;
+    }
+
+    public int getBill() {
+        return bill;
+    }
+
+    public void setBill(int bill) {
+        this.bill = bill;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     @Enumerated(value=EnumType.STRING)
     TripStatus status;

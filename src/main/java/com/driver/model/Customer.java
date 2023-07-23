@@ -8,8 +8,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level= AccessLevel.PRIVATE)
@@ -22,6 +20,38 @@ public class Customer {
 
     String mobileno;
     String password;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMobileno() {
+        return mobileno;
+    }
+
+    public void setMobileno(String mobileno) {
+        this.mobileno = mobileno;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<TripBooking> getCustomerTrips() {
+        return customerTrips;
+    }
+
+    public void setCustomerTrips(List<TripBooking> customerTrips) {
+        this.customerTrips = customerTrips;
+    }
 
     @OneToMany(mappedBy ="customer",cascade = CascadeType.ALL)
 

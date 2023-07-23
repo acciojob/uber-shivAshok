@@ -6,8 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level= AccessLevel.PRIVATE)
@@ -20,8 +19,39 @@ public class Cab {
     int perKmRate;
     boolean available;
 
-    @OneToOne
+    public int getId() {
+        return Id;
+    }
 
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public int getPerKmRate() {
+        return perKmRate;
+    }
+
+    public void setPerKmRate(int perKmRate) {
+        this.perKmRate = perKmRate;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    @OneToOne
     @JoinColumn(name="drivid")
     Driver driver;
 }
